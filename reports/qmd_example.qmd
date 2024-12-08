@@ -11,15 +11,15 @@ jupyter:
       format_version: '1.0'
       jupytext_version: 1.16.4
   kernelspec:
-    display_name: R
-    language: R
-    name: ir
+    display_name: 'Python [conda env:quarto-python]'
+    language: python
+    name: conda-env-quarto-python
 toc: true
 toc-depth: 2
 bibliography: references.bib
 ---
 
-```{r}
+```{python,echo=FALSE}
 import pandas as pd
 from IPython.display import Markdown, display
 from tabulate import tabulate
@@ -65,7 +65,7 @@ We present the standard deviations in **Table @table:sd**.
 
 ## Table 1. Standard deviation of historical (1906-1972) horse populations for each Canadian province.{#table:sd}
 
-```{r,echo=FALSE}
+```{python,echo=FALSE}
 horses_sd_table = pd.read_csv("../results/horses_sd.csv")
 largest_sd = horses_sd_table['Province'].values[0]
 Markdown(horses_sd_table.to_markdown(index = False))
@@ -81,6 +81,6 @@ Additionally, note that in Table 1 we consider the sample standard deviation of 
 
 Figure 2: Horse populations for the province with the largest standard deviation
 
-In Figure @fig:largest-sd we zoom in and look at the province of r largest_sd, which had the largest spread of values in terms of standard deviation.
+In Figure @fig:largest-sd we zoom in and look at the province of {largest_sd}, which had the largest spread of values in terms of standard deviation.
 
 # References
